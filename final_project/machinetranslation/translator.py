@@ -19,18 +19,21 @@ language_translator.set_service_url('https://api.us-south.language-translator.wa
 
 def englishToFrench(englishText):
     #write the code here
-
-    frenchText=language_translator.translate(
-    text=englishText , model_id='en-fr').get_result()
-    print("------englishToFrench******",frenchText)
-    frenchText['translations'][0]['translation']
-
+    if englishText == '':
+        frenchText = ''
+    else:
+        frenchText=language_translator.translate(
+        text=englishText , model_id='en-fr').get_result()
+        frenchText['translations'][0]['translation']
     return frenchText
 
 def frenchToEnglish(frenchText):
     #write the code here
-    englishText=language_translator.translate(
-    text=frenchText , model_id='fr-en').get_result()
+    if frenchText == '':
+        englishText = ''
+    else:
+        englishText=language_translator.translate(
+        text=frenchText , model_id='fr-en').get_result()
 
-    frenchText['translations'][0]['translation']
+        frenchText['translations'][0]['translation']
     return englishText
