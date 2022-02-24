@@ -2,7 +2,7 @@ from machinetranslation import translator
 from flask import Flask, render_template, request
 import json
 import machinetranslation
-from translator import french_to_english, english_to_french
+from machinetranslation.translator import french_to_english, english_to_french
 
 app = Flask("Web Translator")
 
